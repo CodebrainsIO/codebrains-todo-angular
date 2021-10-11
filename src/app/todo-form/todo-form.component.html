@@ -1,0 +1,17 @@
+<div nz-row [nzGutter]="20">
+  <div nz-col>
+    <h1>Form</h1>
+    <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your todo">
+          <input formControlName="title" nz-input placeholder="Todo"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid">Add</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
